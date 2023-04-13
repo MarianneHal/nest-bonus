@@ -24,9 +24,7 @@ export class UsersController {
     @Req() req: any,
     @Body() body: CreateUserDto,
     @Res() res: any,
-  ) {
-    return res.status(HttpStatus.OK).json(await this.userService.getUsers());
-  }
+  ) {}
 
   @Post()
   async createUser(
@@ -45,11 +43,7 @@ export class UsersController {
     @Req() req: any,
     @Res() res: any,
     @Param('userId') userId: any,
-  ) {
-    return res
-      .status(HttpStatus.OK)
-      .json(await this.userService.deleteUser(userId));
-  }
+  ) {}
 
   @ApiParam({ name: 'id', required: true })
   @Patch('/:id')
@@ -58,9 +52,5 @@ export class UsersController {
     @Body() body: CreateUserDto,
     @Res() res: any,
     @Param('userId') userId: any,
-  ) {
-    return res
-      .status(HttpStatus.OK)
-      .json(await this.userService.updateUser(userId, body));
-  }
+  ) {}
 }
